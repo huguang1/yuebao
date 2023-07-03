@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
+    <title>余额宝</title>
+    <script type="text/javascript" src="/static/html/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/html/css/bootstrap.min.css">
+    <script src="/static/html/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/html/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/html/css/animate.css"/>
+    <link rel="stylesheet" href="/static/html/css/owl.carousel.min.css"/>
+    <link href="/static/html/css/fontawesome-all.css" rel="stylesheet">
+    <script>
+        (function ($) { // Begin jQuery
+            $(function () { // DOM ready
+                // If a link has a dropdown, add sub menu toggle.
+                $('nav ul li a:not(:only-child)').click(function (e) {
+                    $(this).siblings('.nav-dropdown').toggle();
+                    // Close one dropdown when selecting another
+                    $('.nav-dropdown').not($(this).siblings()).hide();
+                    e.stopPropagation();
+                });
+                // Clicking away from dropdown will remove the dropdown class
+                $('html').click(function () {
+                    $('.nav-dropdown').hide();
+                });
+                // Toggle open and close nav styles on click
+                $('#nav-toggle').click(function () {
+                    $('nav ul').slideToggle();
+                });
+                // Hamburger to X toggle
+                $('#nav-toggle').on('click', function () {
+                    this.classList.toggle('active');
+                });
+            }); // end DOM ready
+        })(jQuery); // end jQuery
+    </script>
+    <script src="/static/html/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js"></script>
+    <script src="/static/html/js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+</head>
+<body>
+
+<!-- 最上面链接 -->
+<header>
+    <div class="container clearfix">
+        <a href="#">
+            <div class="logo"></div>
+        </a>
+        <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#"><span></span></a></div>
+            <ul class="nav-list clearfix">
+                <li><a href="http://js7467.com:8888/" target="_blank">官网首页</a></li>
+                <li><a href="http://js7467.com:8888/" target="_blank">线路检测</a></li>
+                <li><a href="https://www.a67783.com/" target="_blank">导航站</a></li>
+                <li><a href="https://27711a.com/" target="_blank">优惠大厅</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- 我的余额宝栏 -->
+<section id="top" class="container-fluid">
+    <div class="container">
+        <div class="row page-title-header">
+            <div class="col-12">
+                <div class="page-header">
+                    <h4 class="page-title" style="width: 150px;">我的余额宝</h4>
+                    <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
+                        <ul class="quick-links">
+                            <li><a href="#" class="transferout">交易管理</a></li>
+                            <li><a href="#" class="changePWD">安全中心</a></li>
+                        </ul>
+                        <ul class="quick-links ml-auto">
+                            <li><a href="/">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+
+            <!-- 左边我的账户 -->
+            <div class="col-md-8">
+                <h4 class="page-title">我的账户</h4>
+                <hr>
+                <div class="row summary no-gutters">
+                    <div class="col-md-4 text-center">
+                        <span class="title">昨日收益(元)</span>
+                        <span class="value">{{ balance.interest }}</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="title">总金额(元)</span>
+                        <span class="value">{{ balance.balance }}</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="title">累计收益(元)</span>
+                        <span class="value">+{{ sum_interest }}</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="my-3">
+                    <div class="text-center">
+                        <a href="#" class="button transferin"><i class="far fa-arrow-alt-circle-down"></i>转入</a>
+                        <a href="#" class="button transferout"><i class="far fa-arrow-alt-circle-up"></i>转出</a>
+                        <a href="#" class="button recordlist"><i class="far fa-list-alt"></i>明细</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-0">账户信息</h4>
+                        <div class="d-flex flex-column flex-lg-row">
+                            <table class="m-3">
+                                <tr>
+                                    <td class="text-right">余额宝 :</td>
+                                    <td>{{ balance.balance }} <a class="link recordlist" href="#">财务明细</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h4 class="card-title mb-0">交易记录</h4>
+                        <div class="d-flex flex-column flex-lg-row">
+                            <table class="m-3">
+                                <tr>
+                                    <td class="text-right"><a class="link recordlist" href="#">查看最近交易记录</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右边个人信息 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body d-flex flex-column">
+                        <div class="wrapper">
+                            <h4 class="card-title mb-0">
+                                <img src="/static/html/images/avatar.jpg" width="100" height="100" class="avatar2" alt=""/>
+                                <p id="membername">{{ member.account }}</p>
+                            </h4>
+                            <hr>
+                            <table class="m-3">
+                                <tr>
+                                    <td>安全设置 : <br>
+                                        <a class="link changePWD" href="#">重置登录密码</a><br>
+                                </tr>
+                            </table>
+                            <hr>
+                            <table class="m-3">
+                                <tr>
+                                    <td class="text-right">余额宝 :</td>
+                                    <td>{{ balance.balance }}元</td>
+                                </tr>
+                            </table>
+                            <hr>
+                            <button type="button" class="btn btn-primary transferin">立即充值</button>
+                            <button type="button" class="btn btn-secondary transferout">提现</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body d-flex flex-column">
+                        <div class="wrapper text-center">
+                            这里有你想知道的一切<br>
+                            <img src="/static/html/images/qrcode.jpg" width="200" height="200" alt=""/> <br>
+                            扫一扫二维码有惊喜哦~
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <img src="/static/html/images/footer-logo.png" class="img-fluid">
+        Copyrights &copy; 金沙娱乐场 Reserved
+    </div>
+</footer>
+<script type="text/javascript" src="/static/layui/layui.all.js"></script>
+<script type="text/javascript" src="/static/html/js/inner.js"></script>
+</body>
+</html>

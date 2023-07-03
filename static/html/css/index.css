@@ -1,0 +1,44 @@
+.content{display: inline-block; *display: inline; *zoom:1;	vertical-align: middle;position: relative;right: -100%; width: 700px; *margin-top: 150px; padding: 40px 50px; text-align: left; color: #fff; font-size: 16px; line-height: 28px; border-radius: 10px; border: solid 1px #666; background: #333;
+z-index: 99999;
+}
+.content h2 { padding-bottom: 20px; color: #fcee9c; font-size: 24px; text-align: center;}
+.content ul {}
+.content ul li { padding: 10px 0; border-top: dashed 1px #fff;}
+.content ul {}
+.close_div { position: absolute; top: -1px; right: -1px; z-index: 99999;}
+.close_div a { width: 110px; height: 110px; font-size: 0; background: url(../images/close.png) 0 0 no-repeat; cursor: pointer; display: block;}
+.close_div a:hover { background-position: 0 -110px;}
+
+.tan_box_li1,
+.tan_box_li2,
+.tan_box_li3,
+.tan_box_li4,
+.tan_box_li5,
+.tan_box_li6,
+.tan_box_li7,
+.tan_box_li8,
+.tan_box_dljc,
+.tan_box_dl1,
+.tan_box_dl2 {position: fixed;left: -100%;right:100%;top:0;bottom: 0;text-align: center;font-size: 0; z-index:99999; display:none;}
+.tan_box_li1:after,
+.tan_box_li2:after,
+.tan_box_li3:after,
+.tan_box_li4:after,
+.tan_box_li5:after,
+.tan_box_li6:after,
+.tan_box_li7:after,
+.tan_box_li8:after,
+.tan_box_dljc:after,
+.tan_box_dl1:after,
+.tan_box_dl2:after {content:"";display: inline-block;vertical-align: middle;height: 100%;width: 0; z-index: 999999;}
+.black_bg_li1,
+.black_bg_li2,
+.black_bg_li3,
+.black_bg_li4,
+.black_bg_li5,
+.black_bg_li6,
+.black_bg_li7,
+.black_bg_li8,
+.black_bg_dljc,
+.black_bg_dl1,
+.black_bg_dl2{ width:100%; height:100%; position:fixed; left:0; top:0; z-index:555; background:#000; opacity:0.7;filter:alpha(opacity=70); display:none;}

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, shrink-to-fit=no">
+    <title>余额宝</title>
+    <script type="text/javascript" src="/static/html/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/html/css/bootstrap.min.css">
+    <script src="/static/html/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/html/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/html/css/animate.css"/>
+    <link rel="stylesheet" href="/static/html/css/owl.carousel.min.css"/>
+    <link href="/static/html/css/fontawesome-all.css" rel="stylesheet">
+    <script>
+        (function ($) { // Begin jQuery
+            $(function () { // DOM ready
+                // If a link has a dropdown, add sub menu toggle.
+                $('nav ul li a:not(:only-child)').click(function (e) {
+                    $(this).siblings('.nav-dropdown').toggle();
+                    // Close one dropdown when selecting another
+                    $('.nav-dropdown').not($(this).siblings()).hide();
+                    e.stopPropagation();
+                });
+                // Clicking away from dropdown will remove the dropdown class
+                $('html').click(function () {
+                    $('.nav-dropdown').hide();
+                });
+                // Toggle open and close nav styles on click
+                $('#nav-toggle').click(function () {
+                    $('nav ul').slideToggle();
+                });
+                // Hamburger to X toggle
+                $('#nav-toggle').on('click', function () {
+                    this.classList.toggle('active');
+                });
+            }); // end DOM ready
+        })(jQuery); // end jQuery
+    </script>
+
+    <!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+    <script src="/static/html/js/jquery-ui.min.js"></script>
+
+    <script type="/static/html/text/javascript"
+            src="http://cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js"></script>
+
+    <script src="/static/html/js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+
+</head>
+<body class="home">
+
+
+<header class="home">
+    <div class="container clearfix">
+        <a href="index.html">
+            <div class="logo"></div>
+        </a>
+        <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list clearfix">
+                <li><a href="http://js7467.com:8888/" target="_blank">官网首页</a></li>
+                <li><a href="http://js7467.com:8888/" target="_blank">线路检测</a></li>
+                <li><a href="https://www.a67783.com/" target="_blank">导航站</a></li>
+                <li><a href="https://27711a.com/" target="_blank">优惠大厅</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="home-login">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 px-3"><img src="/static/html/images/home.png" width="740" height="734"
+                                            class="img-fluid" alt=""/></div>
+            <div class="col-md-4 text-center mt-5">
+                <img src="/static/html/images/login.png" width="127" height="57" alt=""/>
+                <br>
+                <br>
+                <div class="form">
+                    <form class="login-form" action="" method="post">
+                        <input type="text" name="account" placeholder="用户"/>
+                        <input type="password" name="password" placeholder="密码"/>
+                        <button>登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <img src="/static/html/images/footer-logo.png" class="img-fluid">
+        Copyrights &copy; 金沙娱乐场 Reserved
+    </div>
+</footer>
+</body>
+</html>
